@@ -11,9 +11,13 @@
         android:id="@+id/imageView10"
         android:layout_width="2232dp"
         android:layout_height="2802dp"
-        app:srcCompat="@drawable/a_whimsical_wallpaper_featuring_cats_relaxing_on_clouds_set_against_a_backdrop_of_stars_and_crescent_moons"
-        tools:layout_editor_absoluteX="-722dp"
-        tools:layout_editor_absoluteY="-782dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382"
+        app:srcCompat="@drawable/a_whimsical_wallpaper_featuring_cats_relaxing_on_clouds_set_against_a_backdrop_of_stars_and_crescent_moons" />
 
     <TextView
         android:id="@+id/homeLbl"
