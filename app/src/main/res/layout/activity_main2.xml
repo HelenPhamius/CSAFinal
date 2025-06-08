@@ -99,6 +99,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#009688"
         android:fontFamily="casual"
+        android:onClick="next"
         android:text="next"
         android:textSize="24sp"
         android:textStyle="bold"
