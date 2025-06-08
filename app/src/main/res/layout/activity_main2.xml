@@ -20,23 +20,28 @@
 
     <TextView
         android:id="@+id/textView1"
+        style="@style/whatIsThis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rate the Cats!"
-        android:textSize="24sp"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:fontFamily="casual"
         android:onClick="back"
         android:text="back"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.256"
@@ -46,10 +51,12 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="87dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#009688"
         android:onClick="back"
-        android:text="up"
+        app:icon="@android:drawable/arrow_up_float"
+        app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.897"
@@ -59,23 +66,39 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="92dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#009688"
         android:onClick="back"
-        android:text="down"
+        android:outlineAmbientShadowColor="#B67D7D"
+        android:outlineSpotShadowColor="#CE8787"
+        android:shadowColor="#B46767"
+        android:textColor="#AB3F3F"
+        android:textColorHighlight="#AF4949"
+        android:textColorHint="#E66D6D"
+        android:textColorLink="#FAD9D9"
+        app:icon="@android:drawable/arrow_down_float"
+        app:iconPadding="8dp"
+        app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.642"
+        app:rippleColor="@color/white"
+        app:strokeColor="#9E3A3A" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:fontFamily="casual"
         android:onClick="back"
         android:text="next"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.764"
@@ -93,7 +116,7 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.189" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -109,9 +132,12 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/whatIsThis"
         android:layout_width="116dp"
         android:layout_height="36dp"
         android:text="rating"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
