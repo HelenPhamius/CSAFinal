@@ -40,4 +40,9 @@ public class MainActivity2 extends AppCompatActivity {
         rate--;
         ratingTV.setText(rate + "/10");
     }
+
+    public void incRating(View view){
+        rate++;
+        ratingTV.setText(rate + "/10");
+    }
 }

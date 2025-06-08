@@ -55,6 +55,7 @@
         android:layout_width="87dp"
         android:layout_height="53dp"
         android:backgroundTint="#009688"
+        android:onClick="incRating"
         android:shadowColor="#E0DCDC"
         android:textColorHighlight="#E9DCDC"
         android:textColorHint="#E2D1D1"
