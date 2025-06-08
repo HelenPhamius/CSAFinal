@@ -12,7 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
-    private TextView tV;
+    private TextView ratingTV;
+    private int rate = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        tV = findViewById(R.id.textView);
+        ratingTV = findViewById(R.id.textView);
 
     }
 
@@ -36,6 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void decRating(View view){
-            tV.setText("hoi");
+        rate--;
+        ratingTV.setText(rate + "/10");
     }
 }

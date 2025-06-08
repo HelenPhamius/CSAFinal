@@ -140,7 +140,7 @@
         style="@style/whatIsThis"
         android:layout_width="116dp"
         android:layout_height="36dp"
-        android:text="rating"
+        android:text="0/10"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
