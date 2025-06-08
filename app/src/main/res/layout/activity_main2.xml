@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_027a42afa353b418f4cdc81dac6d9a2"
     tools:context=".MainActivity2">
 
     <ImageView
@@ -54,7 +55,9 @@
         android:layout_width="87dp"
         android:layout_height="53dp"
         android:backgroundTint="#009688"
-        android:onClick="back"
+        android:shadowColor="#E0DCDC"
+        android:textColorHighlight="#E9DCDC"
+        android:textColorHint="#E2D1D1"
         app:icon="@android:drawable/arrow_up_float"
         app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,14 +65,15 @@
         app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.642"
+        app:rippleColor="#F8F3F3"
+        app:strokeColor="#F8F8F8" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="92dp"
         android:layout_height="52dp"
         android:backgroundTint="#009688"
-        android:onClick="back"
         android:outlineAmbientShadowColor="#B67D7D"
         android:outlineSpotShadowColor="#CE8787"
         android:shadowColor="#B46767"
@@ -95,7 +99,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#009688"
         android:fontFamily="casual"
-        android:onClick="back"
         android:text="next"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -144,4 +147,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.631" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
