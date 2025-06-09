@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,8 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity2 extends AppCompatActivity {
     private TextView ratingTV;
     private ImageView catImg;
+    private ProgressBar progress;
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
-    private int[] ratings = new int[5];
+    public static int[] ratings = new int[5];
     private int index = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
         ratingTV = findViewById(R.id.textView);
         catImg = findViewById(R.id.imageView2);
-
+        progress = findViewById(R.id.progressBar);
         catImg.setImageResource(imgList[0]);
     }
 
@@ -55,12 +57,13 @@ public class MainActivity2 extends AppCompatActivity {
     public void backImg(View view){
         index--;
         catImg.setImageResource(imgList[index]);
-        ratingTV.setText(ratings[index] + "/10");
+        progress.setProgress(progress.getProgress()-1);
     }
 
     public void nextImg(View view){
         index++;
         catImg.setImageResource(imgList[index]);
         ratingTV.setText(ratings[index] + "/10");
+        progress.setProgress(progress.getProgress()+1);
     }
 }
