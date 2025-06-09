@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, MainActivity2.class));
         name = nameInpt.getText().toString().trim().toString();
         name = name.substring(0, name.length()).substring(0, name.length()) + " :3 , ";
-        if (name.substring(0, name.length()).equalsIgnoreCase(name))
-        {
-            name = name.substring(0, name.length());
+        for(int i = 0; i < 5; i++) {
+            if (name.substring(0, name.length()).equalsIgnoreCase(name)) {
+                name = name.substring(0, name.length());
+            }
         }
-
     }
 
 
