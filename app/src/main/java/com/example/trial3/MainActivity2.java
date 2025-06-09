@@ -16,7 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView ratingTV;
     private ImageView catImg;
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
-    private int rate = 0;
+    private int[] ratings = new int[5];
     private int index = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,22 +43,24 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void decRating(View view){
-        rate--;
-        ratingTV.setText(rate + "/10");
+        ratings[index]--;
+        ratingTV.setText(ratings[index] + "/10");
     }
 
     public void incRating(View view){
-        rate++;
-        ratingTV.setText(rate + "/10");
+        ratings[index]++;
+        ratingTV.setText(ratings[index] + "/10");
     }
 
     public void backImg(View view){
         index--;
         catImg.setImageResource(imgList[index]);
+        ratingTV.setText(ratings[index] + "/10");
     }
 
     public void nextImg(View view){
         index++;
         catImg.setImageResource(imgList[index]);
+        ratingTV.setText(ratings[index] + "/10");
     }
 }
