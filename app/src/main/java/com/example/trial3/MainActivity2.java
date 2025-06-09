@@ -26,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity
     private ImageView catImg;
     private ProgressBar progress;
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
-    public static int[] ratings = new int[5];
+    public static String[] ratings = new String[5];
     private int index = 0;
 
 
@@ -52,6 +52,9 @@ public class MainActivity2 extends AppCompatActivity
             {
             act2Title.setText("Hello " + name + act2Title.getText());
             }
+        for(int i = 0; i < ratings.length; i++){
+            ratings[i] = "";
+        }
         //assign the elements to a variable//
         ratingTV = findViewById(R.id.textView);
         catImg = findViewById(R.id.imageView2);
@@ -77,15 +80,15 @@ public class MainActivity2 extends AppCompatActivity
 
     //Checks and changes the color of the rating text box background depending on the current rating//
     public void check() {
-        if (ratings[index] >= 7)
+        if (ratings[index].equalsIgnoreCase("7"))
         {
             ratingTV.setBackgroundColor(Color.parseColor("#71e3aa"));
         }
-            else if (ratings[index] < 5)
+            else if (ratings[index].equals("0"))
             {
                 ratingTV.setBackgroundColor(Color.parseColor("#ed5c9e"));
             }
-            else
+            else if(ratings[index].equals("5"))
             {
             ratingTV.setBackgroundColor(Color.TRANSPARENT);
             }
@@ -95,7 +98,7 @@ public class MainActivity2 extends AppCompatActivity
     //Turns the editable to a String then an int to be added to the ratings list
     public void submitRating(View view)
     {
-        ratings[index] = Integer.parseInt(ratingInpt.getText().toString());
+        ratings[index] = ratingInpt.getText().toString();
         check();
     } //end of submitRating method//
 

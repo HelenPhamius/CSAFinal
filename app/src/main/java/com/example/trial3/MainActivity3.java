@@ -33,19 +33,19 @@ public class MainActivity3 extends AppCompatActivity
         //to find the average rating//
         avgRating = findViewById(R.id.textView3);
         int avg = 0;
-        for(int i : ratings)
+        for(String i : ratings)
         {
-            avg += i;
+            avg += Integer.parseInt(i);
         }
         avg /= ratings.length;
         avgRating.setText(avgRating.getText() + "" + avg + "/10");
 
         //traverses ratings list to find the max (the highest rating)
         hiRating = findViewById(R.id.textView4);
-        int high = ratings[0];
+        String high = ratings[0];
         for(int i = 1; i < ratings.length; i++)
         {
-            if(high < ratings[i])
+            if(Integer.parseInt(high) < Integer.parseInt(ratings[i]))
             {
                 high = ratings[i];
             }
