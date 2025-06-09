@@ -67,13 +67,15 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     public void submitRating(View view){
-        ratings[0] = Integer.parseInt(ratingInpt.getText().toString());
+//        System.out.println(Integer.parseInt(ratingInpt.getText().toString()) + 1);
+        ratings[index] = Integer.parseInt(ratingInpt.getText().toString());
+        check();
     }
     public void backImg(View view){
         if(index != 0){
             index--;
             catImg.setImageResource(imgList[index]);
-            ratingInpt.setText(ratings[index]);
+            ratingInpt.setText(ratings[index] + "");
             progress.setProgress(progress.getProgress()-1);
         }
     }
@@ -82,7 +84,7 @@ public class MainActivity2 extends AppCompatActivity {
         if(index != imgList.length-1){
             index++;
             catImg.setImageResource(imgList[index]);
-            ratingInpt.setText(ratings[index]);
+            ratingInpt.setText(ratings[index] + "");
             progress.setProgress(progress.getProgress()+1);
         }
     }
