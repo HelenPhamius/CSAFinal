@@ -31,7 +31,7 @@ public class MainActivity3 extends AppCompatActivity {
         avgRating = findViewById(R.id.textView3);
         int avg = 0;
         for(int i : ratings){
-            avg += ratings[i];
+            avg += i;
         }
         avg /= ratings.length;
         avgRating.setText(avgRating.getText() + "" + avg + "/10");
