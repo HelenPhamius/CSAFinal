@@ -18,7 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity
+{
     private TextView act2Title;
     private TextInputEditText ratingInpt;
     private TextView ratingTV;
@@ -27,65 +28,100 @@ public class MainActivity2 extends AppCompatActivity {
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
     public static int[] ratings = new int[5];
     private int index = 0;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->
+        {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //A special greeting for Ms. Rioux//
         act2Title = findViewById(R.id.textView1);
-        act2Title.setText("Hello " + name + act2Title.getText());
+        if(name.contains("Rioux")){
+            act2Title.setText("Hello " + name + "!!! " + act2Title.getText());
+        }
+            else
+            {
+            act2Title.setText("Hello " + name + act2Title.getText());
+            }
+        //assign the elements to a variable//
         ratingTV = findViewById(R.id.textView);
         catImg = findViewById(R.id.imageView2);
         progress = findViewById(R.id.progressBar);
         catImg.setImageResource(imgList[0]);
         ratingInpt = findViewById(R.id.inpt2);
         check();
-    }
+    } //end of onCreate method/
 
-    public void back(View view){
+
+//button methods//
+    //return to previous page//
+    public void back(View view)
+    {
         startActivity(new Intent(MainActivity2.this, MainActivity.class));
-    }
+    } //end of back method//
 
-    public void next(View view){
+    //go to next page//
+    public void next(View view)
+    {
         startActivity(new Intent(MainActivity2.this, MainActivity3.class));
-    }
+    } //end of next method//
+
+    //Checks and changes the color of the rating text box background depending on the current rating//
     public void check() {
-        if (ratings[index] >= 7) {
+        if (ratings[index] >= 7)
+        {
             ratingTV.setBackgroundColor(Color.parseColor("#71e3aa"));
-        } else if (ratings[index] < 5) {
-            ratingTV.setBackgroundColor(Color.parseColor("#ed5c9e"));
         }
-            else{
+            else if (ratings[index] < 5)
+            {
+                ratingTV.setBackgroundColor(Color.parseColor("#ed5c9e"));
+            }
+            else
+            {
             ratingTV.setBackgroundColor(Color.TRANSPARENT);
-        }
-    }
+            }
+    } //end of check method//
 
-
-    public void submitRating(View view){
-//        System.out.println(Integer.parseInt(ratingInpt.getText().toString()) + 1);
+    //Takes the information in the rating text input (as type Editable)
+    //Turns the editable to a String then an int to be added to the ratings list
+    public void submitRating(View view)
+    {
         ratings[index] = Integer.parseInt(ratingInpt.getText().toString());
         check();
-    }
-    public void backImg(View view){
-        if(index != 0){
+    } //end of submitRating method//
+
+    //goes to previous image, making sure to display the corresponding rating
+    // and update the progress bar
+    public void backImg(View view)
+    {
+        if(index != 0)
+        {
             index--;
             catImg.setImageResource(imgList[index]);
             ratingInpt.setText(ratings[index] + "");
             progress.setProgress(progress.getProgress()-1);
         }
-    }
+    } //end of backImg rating//
 
-    public void nextImg(View view){
-        if(index != imgList.length-1){
+    //goes to next image, making sure to display the corresponding rating
+    // and update the progress bar
+    public void nextImg(View view)
+    {
+        if(index != imgList.length-1)
+        {
             index++;
             catImg.setImageResource(imgList[index]);
             ratingInpt.setText(ratings[index] + "");
             progress.setProgress(progress.getProgress()+1);
         }
-    }
-}
+    } //end of nextImg method//
+} //end of MainActivity2 class//
