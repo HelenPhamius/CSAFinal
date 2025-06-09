@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         name = nameInpt.getText().toString().trim().toString();
         name = name.substring(0, name.length()).substring(0, name.length()) + " :3 , ";
         for(int i = 0; i < 5; i++) {
-            if (name.substring(0, name.length()).equalsIgnoreCase(name)) {
+            if (name.substring(0, name.length()).equalsIgnoreCase(name) && name.indexOf(name) == 0) {
                 name = name.substring(0, name.length());
             }
         }
