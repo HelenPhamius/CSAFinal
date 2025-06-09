@@ -1,5 +1,7 @@
 package com.example.trial3;
 
+import static com.example.trial3.MainActivity.name;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,7 +17,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
+    private TextView act2Title;
     private TextView ratingTV;
+
     private ImageView catImg;
     private ProgressBar progress;
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
@@ -31,6 +35,8 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        act2Title = findViewById(R.id.textView1);
+        act2Title.setText("Hello " + name + act2Title.getText());
         ratingTV = findViewById(R.id.textView);
         catImg = findViewById(R.id.imageView2);
         progress = findViewById(R.id.progressBar);

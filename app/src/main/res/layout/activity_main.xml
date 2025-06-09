@@ -11,32 +11,33 @@
         android:id="@+id/imageView10"
         android:layout_width="2232dp"
         android:layout_height="2802dp"
+        android:background="#A6FAF9F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
+        app:layout_constraintVertical_bias="0.379"
         app:srcCompat="@drawable/a_whimsical_wallpaper_featuring_cats_relaxing_on_clouds_set_against_a_backdrop_of_stars_and_crescent_moons" />
 
     <TextView
         android:id="@+id/homeLbl"
+        style="@style/whatIsThis"
         android:text="Cat Rating App!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135"
-        style="@style/whatIsThis" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/homeLbl2"
-        android:layout_width="418dp"
-        android:layout_height="205dp"
+        android:layout_width="407dp"
+        android:layout_height="53dp"
         android:background="#A6FAF9F9"
         android:fontFamily="casual"
-        android:text="On the next page, you will rate different images of cats. Prepare to be bombarded by cuteness!"
+        android:text="Enter your name:"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -74,5 +75,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.815" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/backTxtInpt"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#A6FAF9F9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TxtInpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
