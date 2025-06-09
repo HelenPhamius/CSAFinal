@@ -16,10 +16,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class MainActivity2 extends AppCompatActivity {
     private TextView act2Title;
+    private TextInputEditText ratingInpt;
     private TextView ratingTV;
-
     private ImageView catImg;
     private ProgressBar progress;
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
@@ -41,6 +43,7 @@ public class MainActivity2 extends AppCompatActivity {
         catImg = findViewById(R.id.imageView2);
         progress = findViewById(R.id.progressBar);
         catImg.setImageResource(imgList[0]);
+        ratingInpt = findViewById(R.id.inpt2);
         check();
     }
 
@@ -62,24 +65,15 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    public void decRating(View view){
-        ratings[index]--;
-        ratingTV.setText(ratings[index] + "/10");
-        check();
+
+    public void submitRating(View view){
+        ratings[0] = Integer.parseInt(ratingInpt.getText().toString());
     }
-
-
-    public void incRating(View view){
-        ratings[index]++;
-        ratingTV.setText(ratings[index] + "/10");
-        ratingTV.setBackgroundColor(Color.parseColor("#71e3aa"));
-        check();
-    }
-
     public void backImg(View view){
         if(index != 0){
             index--;
             catImg.setImageResource(imgList[index]);
+            ratingInpt.setText(ratings[index]);
             progress.setProgress(progress.getProgress()-1);
         }
     }
@@ -88,7 +82,7 @@ public class MainActivity2 extends AppCompatActivity {
         if(index != imgList.length-1){
             index++;
             catImg.setImageResource(imgList[index]);
-            ratingTV.setText(ratings[index] + "/10");
+            ratingInpt.setText(ratings[index]);
             progress.setProgress(progress.getProgress()+1);
         }
     }

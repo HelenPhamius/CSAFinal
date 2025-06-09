@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         name = name.substring(0, name.length()).substring(0, name.length()) + " :3 , ";
         for(int i = 0; i < 5; i++) {
             if (name.substring(0, name.length()).equalsIgnoreCase(name) && name.indexOf(name) == 0) {
-                name = name.substring(0, name.length());
+                name = (String)((String)name.substring(0, name.length()));
             }
         }
     }
