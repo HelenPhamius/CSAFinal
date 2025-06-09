@@ -55,15 +55,19 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void backImg(View view){
-        index--;
-        catImg.setImageResource(imgList[index]);
-        progress.setProgress(progress.getProgress()-1);
+        if(index != 0){
+            index--;
+            catImg.setImageResource(imgList[index]);
+            progress.setProgress(progress.getProgress()-1);
+        }
     }
 
     public void nextImg(View view){
-        index++;
-        catImg.setImageResource(imgList[index]);
-        ratingTV.setText(ratings[index] + "/10");
-        progress.setProgress(progress.getProgress()+1);
+        if(index != imgList.length-1){
+            index++;
+            catImg.setImageResource(imgList[index]);
+            ratingTV.setText(ratings[index] + "/10");
+            progress.setProgress(progress.getProgress()+1);
+        }
     }
 }
