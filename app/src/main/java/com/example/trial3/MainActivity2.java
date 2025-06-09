@@ -1,6 +1,7 @@
 package com.example.trial3;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
         catImg = findViewById(R.id.imageView2);
         progress = findViewById(R.id.progressBar);
         catImg.setImageResource(imgList[0]);
+        check();
     }
 
     public void back(View view){
@@ -43,15 +45,29 @@ public class MainActivity2 extends AppCompatActivity {
     public void next(View view){
         startActivity(new Intent(MainActivity2.this, MainActivity3.class));
     }
+    public void check() {
+        if (ratings[index] >= 7) {
+            ratingTV.setBackgroundColor(Color.parseColor("#71e3aa"));
+        } else if (ratings[index] < 5) {
+            ratingTV.setBackgroundColor(Color.parseColor("#ed5c9e"));
+        }
+            else{
+            ratingTV.setBackgroundColor(Color.TRANSPARENT);
+        }
+    }
 
     public void decRating(View view){
         ratings[index]--;
         ratingTV.setText(ratings[index] + "/10");
+        check();
     }
+
 
     public void incRating(View view){
         ratings[index]++;
         ratingTV.setText(ratings[index] + "/10");
+        ratingTV.setBackgroundColor(Color.parseColor("#71e3aa"));
+        check();
     }
 
     public void backImg(View view){
