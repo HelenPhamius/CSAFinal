@@ -40,6 +40,7 @@ public class MainActivity3 extends AppCompatActivity
         avg /= ratings.length;
         avgRating.setText(avgRating.getText() + "" + avg + "/10");
 
+        //traverses ratings list to find the max (the highest rating)
         hiRating = findViewById(R.id.textView4);
         int high = ratings[0];
         for(int i = 1; i < ratings.length; i++)
@@ -52,16 +53,17 @@ public class MainActivity3 extends AppCompatActivity
         hiRating.setText(hiRating.getText() + " " + high + "/10");
 
 
-    }
+    } //end of onCreate method//
 
+    //takes the user to the home page//
     public void home(View view)
     {
         startActivity(new Intent(MainActivity3.this, MainActivity.class));
-    }
+    } //end of home method//
+
+    //goes to the previous page
     public void backFrom3(View view)
     {
         startActivity(new Intent(MainActivity3.this, MainActivity2.class));
-    }
-
-
-}
+    } //end of backFrom3 method//
+} //end of MainActivity3 class//

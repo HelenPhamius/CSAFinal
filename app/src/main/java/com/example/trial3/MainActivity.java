@@ -33,21 +33,12 @@ public class MainActivity extends AppCompatActivity
             return insets;
         });
             nameInpt = findViewById(R.id.TxtInpt);
-    }
+    } //end of onCreate method//
 
-    public void tryToast(View view)
-    {
-        Toast toast = Toast.makeText(this, "Button clicked", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
+    //Move onto next page
     public void forward(View view)
     {
         startActivity(new Intent(MainActivity.this, MainActivity2.class));
         name = nameInpt.getText().toString().trim().toString();
-    }
-
-
-
-
-}
+    } //end of forward method//
+} //end of MainActivity class//

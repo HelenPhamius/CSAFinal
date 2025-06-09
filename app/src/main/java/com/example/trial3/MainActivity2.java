@@ -42,6 +42,8 @@ public class MainActivity2 extends AppCompatActivity
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //A special greeting for Ms. Rioux//
         act2Title = findViewById(R.id.textView1);
         if(name.contains("Rioux")){
             act2Title.setText("Hello " + name + "!!! " + act2Title.getText());
@@ -50,24 +52,30 @@ public class MainActivity2 extends AppCompatActivity
             {
             act2Title.setText("Hello " + name + act2Title.getText());
             }
-
+        //assign the elements to a variable//
         ratingTV = findViewById(R.id.textView);
         catImg = findViewById(R.id.imageView2);
         progress = findViewById(R.id.progressBar);
         catImg.setImageResource(imgList[0]);
         ratingInpt = findViewById(R.id.inpt2);
         check();
-    }
+    } //end of onCreate method/
 
+
+//button methods//
+    //return to previous page//
     public void back(View view)
     {
         startActivity(new Intent(MainActivity2.this, MainActivity.class));
-    }
+    } //end of back method//
 
+    //go to next page//
     public void next(View view)
     {
         startActivity(new Intent(MainActivity2.this, MainActivity3.class));
-    }
+    } //end of next method//
+
+    //Checks and changes the color of the rating text box background depending on the current rating//
     public void check() {
         if (ratings[index] >= 7)
         {
@@ -81,14 +89,18 @@ public class MainActivity2 extends AppCompatActivity
             {
             ratingTV.setBackgroundColor(Color.TRANSPARENT);
             }
-    }
+    } //end of check method//
 
-
+    //Takes the information in the rating text input (as type Editable)
+    //Turns the editable to a String then an int to be added to the ratings list
     public void submitRating(View view)
     {
         ratings[index] = Integer.parseInt(ratingInpt.getText().toString());
         check();
-    }
+    } //end of submitRating method//
+
+    //goes to previous image, making sure to display the corresponding rating
+    // and update the progress bar
     public void backImg(View view)
     {
         if(index != 0)
@@ -98,8 +110,10 @@ public class MainActivity2 extends AppCompatActivity
             ratingInpt.setText(ratings[index] + "");
             progress.setProgress(progress.getProgress()-1);
         }
-    }
+    } //end of backImg rating//
 
+    //goes to next image, making sure to display the corresponding rating
+    // and update the progress bar
     public void nextImg(View view)
     {
         if(index != imgList.length-1)
@@ -109,5 +123,5 @@ public class MainActivity2 extends AppCompatActivity
             ratingInpt.setText(ratings[index] + "");
             progress.setProgress(progress.getProgress()+1);
         }
-    }
-}
+    } //end of nextImg method//
+} //end of MainActivity2 class//
