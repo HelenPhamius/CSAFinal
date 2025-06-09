@@ -45,14 +45,6 @@ public class MainActivity extends AppCompatActivity
     {
         startActivity(new Intent(MainActivity.this, MainActivity2.class));
         name = nameInpt.getText().toString().trim().toString();
-        name = name.substring(0, name.length()).substring(0, name.length()) + " :3 , ";
-        for(int i = 0; i < 5; i++)
-        {
-            if (name.substring(0, name.length()).equalsIgnoreCase(name) && name.indexOf(name) == 0)
-            {
-                name = (String)((String)name.substring(0, name.length()));
-            }
-        }
     }
 
 

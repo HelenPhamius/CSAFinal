@@ -43,7 +43,14 @@ public class MainActivity2 extends AppCompatActivity
             return insets;
         });
         act2Title = findViewById(R.id.textView1);
-        act2Title.setText("Hello " + name + act2Title.getText());
+        if(name.contains("Rioux")){
+            act2Title.setText("Hello " + name + "!!! " + act2Title.getText());
+        }
+            else
+            {
+            act2Title.setText("Hello " + name + act2Title.getText());
+            }
+
         ratingTV = findViewById(R.id.textView);
         catImg = findViewById(R.id.imageView2);
         progress = findViewById(R.id.progressBar);
