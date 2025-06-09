@@ -14,15 +14,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity3 extends AppCompatActivity {
+public class MainActivity3 extends AppCompatActivity
+{
     private TextView avgRating;
     private TextView hiRating;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main3);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->
+        {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -30,7 +33,8 @@ public class MainActivity3 extends AppCompatActivity {
         //to find the average rating//
         avgRating = findViewById(R.id.textView3);
         int avg = 0;
-        for(int i : ratings){
+        for(int i : ratings)
+        {
             avg += i;
         }
         avg /= ratings.length;
@@ -38,8 +42,10 @@ public class MainActivity3 extends AppCompatActivity {
 
         hiRating = findViewById(R.id.textView4);
         int high = ratings[0];
-        for(int i = 1; i < ratings.length; i++){
-            if(high < ratings[i]){
+        for(int i = 1; i < ratings.length; i++)
+        {
+            if(high < ratings[i])
+            {
                 high = ratings[i];
             }
         }
@@ -48,10 +54,12 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
-    public void home(View view){
+    public void home(View view)
+    {
         startActivity(new Intent(MainActivity3.this, MainActivity.class));
     }
-    public void backFrom3(View view){
+    public void backFrom3(View view)
+    {
         startActivity(new Intent(MainActivity3.this, MainActivity2.class));
     }
 

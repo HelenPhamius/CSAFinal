@@ -18,7 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity
+{
     private TextView act2Title;
     private TextInputEditText ratingInpt;
     private TextView ratingTV;
@@ -27,12 +28,16 @@ public class MainActivity2 extends AppCompatActivity {
     private int[] imgList = {R.drawable.cute, R.drawable.mello, R.drawable.mocha, R.drawable.po, R.drawable.sema };
     public static int[] ratings = new int[5];
     private int index = 0;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->
+        {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -47,32 +52,40 @@ public class MainActivity2 extends AppCompatActivity {
         check();
     }
 
-    public void back(View view){
+    public void back(View view)
+    {
         startActivity(new Intent(MainActivity2.this, MainActivity.class));
     }
 
-    public void next(View view){
+    public void next(View view)
+    {
         startActivity(new Intent(MainActivity2.this, MainActivity3.class));
     }
     public void check() {
-        if (ratings[index] >= 7) {
+        if (ratings[index] >= 7)
+        {
             ratingTV.setBackgroundColor(Color.parseColor("#71e3aa"));
-        } else if (ratings[index] < 5) {
-            ratingTV.setBackgroundColor(Color.parseColor("#ed5c9e"));
         }
-            else{
+            else if (ratings[index] < 5)
+            {
+                ratingTV.setBackgroundColor(Color.parseColor("#ed5c9e"));
+            }
+            else
+            {
             ratingTV.setBackgroundColor(Color.TRANSPARENT);
-        }
+            }
     }
 
 
-    public void submitRating(View view){
-//        System.out.println(Integer.parseInt(ratingInpt.getText().toString()) + 1);
+    public void submitRating(View view)
+    {
         ratings[index] = Integer.parseInt(ratingInpt.getText().toString());
         check();
     }
-    public void backImg(View view){
-        if(index != 0){
+    public void backImg(View view)
+    {
+        if(index != 0)
+        {
             index--;
             catImg.setImageResource(imgList[index]);
             ratingInpt.setText(ratings[index] + "");
@@ -80,8 +93,10 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    public void nextImg(View view){
-        if(index != imgList.length-1){
+    public void nextImg(View view)
+    {
+        if(index != imgList.length-1)
+        {
             index++;
             catImg.setImageResource(imgList[index]);
             ratingInpt.setText(ratings[index] + "");
