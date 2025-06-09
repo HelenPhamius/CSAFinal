@@ -30,7 +30,7 @@ public class MainActivity3 extends AppCompatActivity {
         //to find the average rating//
         avgRating = findViewById(R.id.textView3);
         int avg = 0;
-        for(int i = 0; i < ratings.length; i++){
+        for(int i : ratings){
             avg += ratings[i];
         }
         avg /= ratings.length;
