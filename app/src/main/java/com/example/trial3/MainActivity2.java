@@ -50,7 +50,7 @@ public class MainActivity2 extends AppCompatActivity
         }
             else
             {
-            act2Title.setText("Hello " + name + act2Title.getText());
+            act2Title.setText("Hello " + name + " " + act2Title.getText());
             }
         for(int i = 0; i < ratings.length; i++){
             ratings[i] = "";
